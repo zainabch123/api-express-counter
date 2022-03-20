@@ -11,13 +11,14 @@ In this exercise we will build a simple counter API using express.
 - Use console.log() and read the result in the server logs
 
 ## Instructions
-Create a new express application and implement the following endpoints:
+Create a new express application using the steps provided in the [express intro](https://github.com/boolean-uk/api-express-intro#express-setup). 
 
-- POST `/counter/increment`-  Increments a counter on the server and returns the current value.
+Ypur application should maintain a simple numeric counter and provide the following endpoints that allow a client to retrieve and manipulate the counter:
+- GET `/counter` - Returns the current value of the counter. The counter should start of at 0.
+- POST `/counter/increment`-  Increments the counter on the server and returns the current value.
 - POST `/counter/decrement`-  Decrements a counter on the server and returns the current value.
 - POST `/counter/double`-  Double the value of the counter on the server and returns the current value. 
 - DELETE `/counter` - Resets the counter to 0 and returns the current value.
-- GET `/counter` - Returns the current value of the counter.
 
 All endpoints should return the current value of the counter in following format: `{ counter: 0 }`
 
