@@ -11,7 +11,7 @@ In this exercise we will build a simple counter API using express.
 - Use console.log() and read the result in the server logs
 
 ## Instructions
-Create a new express application using the steps provided in the [express intro](https://github.com/boolean-uk/api-express-intro#express-setup). 
+Create a new express application using the steps provided in the [express intro](https://github.com/boolean-uk/api-address-book). 
 
 Ypur application should maintain a simple numeric counter and provide the following endpoints that allow a client to retrieve and manipulate the counter:
 - GET `/counter` - Returns the current value of the counter. The counter should start of at 0.
