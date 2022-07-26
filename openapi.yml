@@ -69,6 +69,87 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Counter'
+  /counter?value={number}:
+    put:
+      summary: Set the counter to a specific value via a query parameter
+      tags:
+        - extension 1
+      produces:
+        - application/json
+      parameters:
+        - name: value
+          in: query
+          description: The value to set the counter to
+          schema:
+            type: integer
+      responses:
+        200:
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Counter'
+  /counter/{name}:
+    get:
+      summary: Retrieve the current counter for the provided counter name
+      tags:
+        - extension 2
+      responses:
+        200:
+          description: OK
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Counter'
+    delete:
+      summary: Reset the counter for the provided name to 0
+      tags:
+        - extension 2
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Counter'
+  /counter/{name}/increment:
+    post:
+      summary: Increment the counter for the provided name
+      tags:
+        - extension 2
+      responses:
+        200:
+          description: OK
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Counter'
+  /counter/{name}/decrement:
+    post:
+      summary: Decrement the counter for the provided name
+      tags:
+        - extension 2
+      responses:
+        200:
+          description: OK
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Counter'
+  /counter/{name}/double:
+    post:
+      summary: Double the counter for the provided name
+      tags:
+        - extension 2
+      responses:
+        200:
+          description: OK
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Counter'
 
 
 components:
