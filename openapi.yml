@@ -1,0 +1,80 @@
+openapi: 3.0.0
+info:
+  title: Counter API
+  version: 0.0.1
+servers:
+  - url: http://localhost:3030
+basePath: /
+schemes:
+  - http
+paths:
+  /counter:
+    get:
+      summary: Retrieve the current counter
+      tags:
+        - counter
+      responses:
+        200:
+          description: OK
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Counter'
+    delete:
+      summary: Reset the counter to 0
+      tags:
+        - counter
+      produces:
+        - application/json
+      responses:
+        200:
+          description: OK
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Counter'
+  /counter/increment:
+    post:
+      summary: Increment the counter
+      tags:
+        - counter
+      responses:
+        200:
+          description: OK
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Counter'
+  /counter/decrement:
+    post:
+      summary: Decrement the counter
+      tags:
+        - counter
+      responses:
+        200:
+          description: OK
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Counter'
+  /counter/double:
+    post:
+      summary: Double the counter
+      tags:
+        - counter
+      responses:
+        200:
+          description: OK
+          content: 
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Counter'
+
+
+components:
+  schemas:
+    Counter: 
+      type: object
+      properties:
+        counter: 
+          type: integer
