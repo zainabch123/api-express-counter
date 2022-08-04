@@ -39,7 +39,7 @@ paths:
       tags:
         - counter
       responses:
-        200:
+        201:
           description: OK
           content: 
             application/json:
@@ -51,7 +51,7 @@ paths:
       tags:
         - counter
       responses:
-        200:
+        201:
           description: OK
           content: 
             application/json:
@@ -63,7 +63,7 @@ paths:
       tags:
         - counter
       responses:
-        200:
+        201:
           description: OK
           content: 
             application/json:
@@ -83,7 +83,7 @@ paths:
           schema:
             type: integer
       responses:
-        200:
+        201:
           description: OK
           content:
             application/json:
@@ -120,7 +120,7 @@ paths:
       tags:
         - extension 2
       responses:
-        200:
+        201:
           description: OK
           content: 
             application/json:
@@ -132,7 +132,7 @@ paths:
       tags:
         - extension 2
       responses:
-        200:
+        201:
           description: OK
           content: 
             application/json:
@@ -144,7 +144,7 @@ paths:
       tags:
         - extension 2
       responses:
-        200:
+        201:
           description: OK
           content: 
             application/json:
