@@ -13,7 +13,7 @@ In this exercise we will build a simple counter API using express.
 ## Instructions
 Create a new express application using the steps provided in the [express intro](https://github.com/boolean-uk/api-address-book). 
 
-Ypur application should maintain a simple numeric counter and provide the endpoints detailed in the [API Spec](https://boolean-uk.github.io/api-express-counter/).
+Your application should maintain a simple numeric counter and provide the endpoints detailed in the [API Spec](https://boolean-uk.github.io/api-express-counter/).
 
 Each route should be detailed in a sequence diagram in the same way you did during the API address book exercise.
 
