@@ -10,8 +10,78 @@ In this exercise we will build a simple counter API using express.
 - Diagram the request and response cycle for an Express API.
 - Use console.log() and read the result in the server logs
 
+## Express Setup
+To set up a new express application, in an empty folder follow these steps.
+
+1. Initialize npm. You can accept all the defaults.
+```
+npm init
+```
+
+2. Install the [express](https://expressjs.com/)  library
+```
+npm install express
+```
+
+3. Install [nodemon](https://www.npmjs.com/package/nodemon). nodemon is a utility that will automatically restart our express server any time we change code.
+```
+npm install --save-dev nodemon
+```
+
+4. Install the [morgan](https://expressjs.com/en/resources/middleware/morgan.html) middleware. Express middleware allows us to extend express with additional functionality. Morgan is express middleware we can use to have our server automatically log all requests. This helps gives us visibility of what our server is doing.
+```
+npm install morgan
+```
+
+5. Install the [cors](https://expressjs.com/en/resources/middleware/cors.html) middleware. This allows us to make HTTP requests to our API using fetch from the browser.
+```
+npm install cors
+```
+
+6. Create our `index.js` file. This is our *entrypoint* - the source file that will start running our server.
+
+```javascript
+//Include the express library
+const express = require("express")
+//Include the morgan middleware
+const morgan = require("morgan")
+//Include the cors middleware
+const cors = require("cors")
+
+//Create a new express application
+const app = express()
+
+//Tell express we want to use the morgan library
+app.use(morgan("dev"))
+//Tell express we want to use the cors library
+app.use(cors())
+//Tell express to parse JSON in the request body
+app.use(express.json())
+
+//Start up our server
+const port = 3030
+app.listen(port, () => {
+ console.log(`Server is running on http://localhost:${port}/`)
+})
+
+```
+
+7. Update your `package.json` file and replace the `"scripts"` section with the following:
+
+```json
+"scripts": {
+   "start" : "nodemon index.js"
+},
+```
+
+8. Finally, start up our server!
+```
+npm start
+```
+
+Our servers is now running and *listening* for HTTP requests.
+
 ## Instructions
-Create a new express application using the steps provided in the [express intro](https://github.com/boolean-uk/api-address-book). 
 
 Your application should maintain a simple numeric counter and provide the endpoints detailed in the [API Spec](https://boolean-uk.github.io/api-express-counter/).
 
