@@ -77,14 +77,6 @@ app.use(express.json())
 module.exports = app
 ```
 
-7. Update your `package.json` file and replace the `"scripts"` section with the following:
-
-```json
-"scripts": {
-   "start" : "npx nodemon ./src/index.js"
-},
-```
-
 8. Finally, start up our server!
 ```
 npm start
@@ -102,6 +94,31 @@ Test each route using:
 - `fetch`
 - `curl`
 - An API testing tool such as postman or insomnia
+
+## Running tests
+
+Run the following commands from your project directory to run the test suites:
+```sh
+$ npm test # standard criteria
+$ npm run test-extensions # extension criteria
+```
+
+You can also focus on one test at a time - use the [jest docs](https://jestjs.io/docs/cli) to help filter which tests to run. We recommend you run tests manually with the option `--forceExit`.
+
+For example, for the following test:
+```js
+it("describes an invidual test", async () => {
+  const response = await supertest(app).get("/books")
+
+  expect(response.status).toEqual(200)
+})
+```
+
+Here are two ways to run it.
+```sh
+$ npx jest -t "describes an invidual test" --forceExit
+$ npx jest test/api/routes/books.spec.js --forceExit # remember to add the 'f' before it()
+```
 
 ## Extension 1
 Add a route as detailed in the [API Spec Extension 1](https://boolean-uk.github.io/api-express-counter/#tag/extension-1). For example, making a PUT request to `/counter?value=20` should set the value of the counter to 20. Use the `req.query` property in your callback to get the value provided. See the [express documentation](https://expressjs.com/en/api.html#req.query). If no value is provided, the counter should not be changed.
