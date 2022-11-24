@@ -23,7 +23,7 @@ npm init
 npm install express
 ```
 
-3. Install [nodemon](https://www.npmjs.com/package/nodemon). nodemon is a utility that will automatically restart our express server any time we change code.
+3. Install [nodemon](https://www.npmjs.com/package/nodemon). nodemon is a utility tool that will automatically restart our express server any time we change code.
 ```
 npm install --save-dev nodemon
 ```
@@ -38,7 +38,23 @@ npm install morgan
 npm install cors
 ```
 
-6. Create our `index.js` file. This is our *entrypoint* - the source file that will start running our server.
+6. Inside a `/src` directory, create two files.
+
+- Create a file that will run our app: `index.js` . This is our *entrypoint* - the source file that will start running our server.
+- Create a file that will define what our app does: `server.js`
+
+7. In the app runner, add this code:
+
+```js
+const app = require('./index.js')
+const port = 3030
+
+app.listen(port, () => {
+ console.log(`Server is running on http://localhost:${port}/`)
+})
+```
+
+8. In the file that defines what the app does:
 
 ```javascript
 //Include the express library
@@ -58,19 +74,14 @@ app.use(cors())
 //Tell express to parse JSON in the request body
 app.use(express.json())
 
-//Start up our server
-const port = 3030
-app.listen(port, () => {
- console.log(`Server is running on http://localhost:${port}/`)
-})
-
+module.exports = app
 ```
 
 7. Update your `package.json` file and replace the `"scripts"` section with the following:
 
 ```json
 "scripts": {
-   "start" : "nodemon index.js"
+   "start" : "npx nodemon ./src/index.js"
 },
 ```
 
