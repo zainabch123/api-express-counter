@@ -77,7 +77,15 @@ app.use(express.json())
 module.exports = app
 ```
 
-8. Finally, start up our server!
+9. Update your package.json file and replace the "scripts" section with the following:
+
+```json
+"scripts": {
+   "start" : "npx nodemon ./src/index.js"
+},
+```
+
+10. Finally, start up our server!
 ```
 npm start
 ```
