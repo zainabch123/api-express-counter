@@ -46,7 +46,7 @@ npm install cors
 7. In the app runner, add this code:
 
 ```js
-const app = require('./index.js')
+const app = require('./server.js')
 const port = 3030
 
 app.listen(port, () => {
