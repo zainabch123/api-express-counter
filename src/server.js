@@ -40,5 +40,14 @@ app.post("/counter/double", function(req, res) {
     counter*=2
     res.status(201).json({ counter: counter });
 })
+
+app.put("/counter", (req, res) => {
+  const number = Number(req.query.value);
+  counter = number;
+  res.status(201).json({counter: counter});
+});
+
+
+
 //Export our app so other files can run it
 module.exports = app;
